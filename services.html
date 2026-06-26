@@ -9,17 +9,328 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Link back out to your main stylesheet -->
-    <link rel="stylesheet" href="../css/style.css">
-</head>
-<body class="dark-theme">
 
-    <!-- 1. Navigation Bar (Working Links) -->
+    <!-- Premium Embedded Stylesheet -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(180deg, #000000 0%, #111827 50%, #1f2937 100%) !important;
+            color: #f8fafc !important;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        a {
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 1. Navbar Layout */
+        .navbar {
+            background: #000000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            height: 80px;
+            display: flex;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #ffffff;
+        }
+
+        .logo span {
+            background: linear-gradient(90deg, #ffffff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #cbd5e1;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #ffffff;
+        }
+
+        .nav-buttons {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-left: 20px;
+        }
+
+        .btn-login {
+            padding: 10px 20px;
+            color: #ffffff !important;
+        }
+
+        .btn-signup {
+            padding: 10px 22px;
+            background: #ffffff;
+            color: #000000 !important;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        .btn-signup:hover {
+            background: #cbd5e1;
+        }
+
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #ffffff;
+            cursor: pointer;
+        }
+
+        /* 2. Dashboard Section */
+        .search-dashboard {
+            text-align: center;
+            padding: 60px 0 30px;
+        }
+
+        .search-dashboard h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 12px;
+        }
+
+        .search-dashboard p {
+            color: #cbd5e1;
+            font-size: 1.05rem;
+            margin-bottom: 40px;
+        }
+
+        /* 3. Search Bar UI */
+        .search-bar-box {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            max-width: 650px;
+            margin: 0 auto 40px;
+            padding: 8px 8px 8px 24px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+        }
+
+        .search-icon {
+            color: #cbd5e1;
+            margin-right: 15px;
+        }
+
+        .search-bar-box input {
+            background: transparent;
+            border: none;
+            outline: none;
+            color: #ffffff;
+            width: 100%;
+            font-size: 1rem;
+        }
+
+        .btn-search {
+            background: #ffffff;
+            color: #000000;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        /* 4. Filter Buttons */
+        .filter-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: #ffffff;
+            color: #000000;
+        }
+
+        /* 5. Services Grid & Cards */
+        .catalog-section {
+            padding: 40px 0 100px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .premium-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .card-img-holder {
+            height: 160px;
+            background: linear-gradient(135deg, #1f2937 0%, #000000 100%);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .card-body {
+            padding: 24px;
+        }
+
+        .freelancer-meta {
+            font-size: 0.8rem;
+            color: #cbd5e1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .level-tag {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        .premium-card h3 {
+            font-size: 1.2rem;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .premium-card p {
+            font-size: 0.9rem;
+            color: #cbd5e1;
+            margin-bottom: 20px;
+        }
+
+        .card-footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .rating {
+            color: #f59e0b;
+            font-weight: 600;
+        }
+
+        .rating span {
+            color: #cbd5e1;
+            font-weight: 400;
+        }
+
+        .price {
+            font-size: 0.8rem;
+            color: #cbd5e1;
+            text-align: right;
+        }
+
+        .price span {
+            display: block;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .premium-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        /* 6. Footer Layout */
+        .main-footer {
+            padding: 40px 0;
+        }
+
+        .footer-divider {
+            border: 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .copyright {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hamburger { display: block; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Navigation Bar -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="../index.html" class="logo">Lync<span>It</span>.</a>
+            <a href="index.html" class="logo">Lync<span>It</span>.</a>
             <ul class="nav-links" id="navLinks">
-                <li><a href="../index.html">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="services.html" class="active">Browse Services</a></li>
                 <li><a href="#">Find Talent</a></li>
                 <li><a href="#">How It Works</a></li>
@@ -28,9 +339,6 @@
                     <a href="#" class="btn-signup">Sign Up</a>
                 </li>
             </ul>
-            <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation">
-                <i class="fa-solid fa-bars"></i>
-            </button>
         </div>
     </nav>
 
@@ -40,14 +348,12 @@
             <h1>Explore Professional Gigs</h1>
             <p>Find premium vetted experts spanning core technical sectors globally.</p>
             
-            <!-- Search Bar UI Container -->
             <div class="search-bar-box">
                 <i class="fa-solid fa-magnifying-glass search-icon"></i>
-                <input type="text" placeholder="Search for services (e.g., React, Logo Design, Copywriting)...">
+                <input type="text" placeholder="Search for services (e.g., React, Logo Design)...">
                 <button class="btn-search">Search</button>
             </div>
 
-            <!-- Category Filtering UI -->
             <div class="filter-wrapper">
                 <button class="filter-btn active">All Categories</button>
                 <button class="filter-btn"><i class="fa-solid fa-code"></i> Web Development</button>
@@ -60,7 +366,7 @@
         </div>
     </header>
 
-    <!-- 3. Responsive 12-Card Grid Layout Section -->
+    <!-- 3. 12-Card Grid Section -->
     <main class="catalog-section">
         <div class="section-container">
             <div class="services-grid">
@@ -71,7 +377,7 @@
                     <div class="card-body">
                         <div class="freelancer-meta">By <strong>Alex M.</strong> <span class="level-tag">Level 2</span></div>
                         <h3>Build Custom Fullstack Next.js Applications</h3>
-                        <p>High-performance rendering web engines custom-crafted to accelerate corporate business scaling metrics.</p>
+                        <p>High-performance web applications built for optimal speed and scalability.</p>
                         <div class="card-footer">
                             <div class="rating"><i class="fa-solid fa-star"></i> 4.9 <span>(142)</span></div>
                             <div class="price">Starting at <span>Rs. 25,000</span></div>
@@ -85,7 +391,7 @@
                     <div class="card-body">
                         <div class="freelancer-meta">By <strong>Sarah K.</strong> <span class="level-tag">Pro</span></div>
                         <h3>Modern Minimalist Brand Logo & Identity</h3>
-                        <p>Complete custom premium vector dynamic branding design schemes complete with layered guide files.</p>
+                        <p>Complete vector branding packages complete with custom guide files.</p>
                         <div class="card-footer">
                             <div class="rating"><i class="fa-solid fa-star"></i> 5.0 <span>(89)</span></div>
                             <div class="price">Starting at <span>Rs. 12,000</span></div>
@@ -99,7 +405,7 @@
                     <div class="card-body">
                         <div class="freelancer-meta">By <strong>John D.</strong> <span class="level-tag">Top Rated</span></div>
                         <h3>SEO Optimized Copywriting & Technical Blogs</h3>
-                        <p>Rank authoritative industry articles high on core search engine platforms via target keywords configuration.</p>
+                        <p>Authoritative content optimized to rank high on modern search engines.</p>
                         <div class="card-footer">
                             <div class="rating"><i class="fa-solid fa-star"></i> 4.8 <span>(210)</span></div>
                             <div class="price">Starting at <span>Rs. 5,500</span></div>
@@ -113,7 +419,7 @@
                     <div class="card-body">
                         <div class="freelancer-meta">By <strong>Emma W.</strong> <span class="level-tag">Level 1</span></div>
                         <h3>Targeted Meta & Google Ad Campaign Setup</h3>
-                        <p>Scale business e-commerce stores ROI parameters using optimized target audience conversion blueprints.</p>
+                        <p>Scale business e-commerce returns using optimized traffic strategies.</p>
                         <div class="card-footer">
                             <div class="rating"><i class="fa-solid fa-star"></i> 4.7 <span>(64)</span></div>
                             <div class="price">Starting at <span>Rs. 18,500</span></div>
@@ -127,7 +433,7 @@
                     <div class="card-body">
                         <div class="freelancer-meta">By <strong>David L.</strong> <span class="level-tag">Level 2</span></div>
                         <h3>Cinematic Video Editing & Social Shorts</h3>
-                        <p>Engaging pacing, custom overlays, transitions, audio balancing, and text dynamics for content platforms.</p>
+                        <p>Dynamic pacing, custom overlays, and color grading for modern media plans.</p>
                         <div class="card-footer">
                             <div class="rating"><i class="fa-solid fa-star"></i> 4.9 <span>(115)</span></div>
                             <div class="price">Starting at <span>Rs. 8,000</span></div>
@@ -141,7 +447,7 @@
                     <div class="card-body">
                         <div class="freelancer-meta">By <strong>Zayn A.</strong> <span class="level-tag">Pro</span></div>
                         <h3>Custom Python Automation Scripts & Scraping</h3>
-                        <p>Automate repetitive administrative or visual parsing loops securely using structured database returns.</p>
+                        <p>Automate tedious visual parsing loops using custom database integrations.</p>
                         <div class="card-footer">
                             <div class="rating"><i class="fa-solid fa-star"></i> 5.0 <span>(43)</span></div>
                             <div class="price">Starting at <span>Rs. 15,000</span></div>
@@ -155,7 +461,7 @@
                     <div class="card-body">
                         <div class="freelancer-meta">By <strong>Maria T.</strong> <span class="level-tag">Level 2</span></div>
                         <h3>Responsive WordPress E-Commerce Deployment</h3>
-                        <p>Complete web retail layouts integrated with global premium secure automated checkouts ecosystems.</p>
+                        <p>Complete commercial architectures integrated with secure global checkouts.</p>
                         <div class="card-footer">
                             <div class="rating"><i class="fa-solid fa-star"></i> 4.9 <span>(97)</span></div>
                             <div class="price">Starting at <span>Rs. 22,000</span></div>
@@ -169,7 +475,7 @@
                     <div class="card-body">
                         <div class="freelancer-meta">By <strong>Liam N.</strong> <span class="level-tag">Level 1</span></div>
                         <h3>Sleek Figma UI/UX Web Dashboard Prototypes</h3>
-                        <p>User-centered research turned into breathtaking wireframes and interactive pixel-perfect templates.</p>
+                        <p>User-centered research turned into high-fidelity functional user systems.</p>
                         <div class="card-footer">
                             <div class="rating"><i class="fa-solid fa-star"></i> 4.6 <span>(38)</span></div>
                             <div class="price">Starting at <span>Rs. 14,000</span></div>
@@ -182,8 +488,8 @@
                     <div class="card-img-holder">📝 Writing</div>
                     <div class="card-body">
                         <div class="freelancer-meta">By <strong>Clara R.</strong> <span class="level-tag">Level 2</span></div>
-                        <h3>Professional Resume & LinkedIn Profile Writing</h3>
-                        <p>Optimize your corporate career pathways utilizing industry applicant tracking keyword frameworks.</p>
+                        <h3>Professional Resume & LinkedIn Copywriting</h3>
+                        <p>Optimize professional identity layouts to pass automated applicant tracking systems.</p>
                         <div class="card-footer">
                             <div class="rating"><i class="fa-solid fa-star"></i> 5.0 <span>(76)</span></div>
                             <div class="price">Starting at <span>Rs. 4,500</span></div>
@@ -197,7 +503,7 @@
                     <div class="card-body">
                         <div class="freelancer-meta">By <strong>Omar F.</strong> <span class="level-tag">Top Rated</span></div>
                         <h3>Organic Social Media Growth Management</h3>
-                        <p>Build real communities across major media pipelines with targeted strategic scheduling calendars.</p>
+                        <p>Build real online communities using strategic interaction roadmaps.</p>
                         <div class="card-footer">
                             <div class="rating"><i class="fa-solid fa-star"></i> 4.8 <span>(183)</span></div>
                             <div class="price">Starting at <span>Rs. 19,000</span></div>
@@ -211,7 +517,7 @@
                     <div class="card-body">
                         <div class="freelancer-meta">By <strong>Sofia V.</strong> <span class="level-tag">Pro</span></div>
                         <h3>Premium 3D Product Mockups & Rendering</h3>
-                        <p>High-resolution realistic product display materials perfect for dynamic marketing presentation grids.</p>
+                        <p>High-resolution realistic product displays perfect for retail listings.</p>
                         <div class="card-footer">
                             <div class="rating"><i class="fa-solid fa-star"></i> 4.9 <span>(52)</span></div>
                             <div class="price">Starting at <span>Rs. 16,500</span></div>
@@ -225,7 +531,7 @@
                     <div class="card-body">
                         <div class="freelancer-meta">By <strong>Ryan G.</strong> <span class="level-tag">Level 2</span></div>
                         <h3>Secure API Development & Database Setup</h3>
-                        <p>Fast SQL/NoSQL structures connecting client layers safely to background logic pipelines.</p>
+                        <p>Fast SQL/NoSQL architectures connecting application frontends cleanly.</p>
                         <div class="card-footer">
                             <div class="rating"><i class="fa-solid fa-star"></i> 4.9 <span>(31)</span></div>
                             <div class="price">Starting at <span>Rs. 30,000</span></div>
@@ -240,11 +546,10 @@
     <!-- 4. Footer -->
     <footer class="main-footer">
         <div class="footer-container">
-            <hr class="footer-divider" style="margin-top: 0;">
+            <hr class="footer-divider">
             <p class="copyright">&copy; 2026 LyncIt Marketplace. All rights reserved.</p>
         </div>
     </footer>
 
-    <script src="../js/main.js"></script>
 </body>
 </html>
