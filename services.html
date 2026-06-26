@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Services | LyncIt Marketplace</title>
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Link back out to your main stylesheet -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="dark-theme">
+
+    <!-- 1. Navigation Bar (Working Links) -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">Lync<span>It</span>.</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="services.html" class="active">Browse Services</a></li>
+                <li><a href="#">Find Talent</a></li>
+                <li><a href="#">How It Works</a></li>
+                <li class="nav-buttons">
+                    <a href="#" class="btn-login">Log In</a>
+                    <a href="#" class="btn-signup">Sign Up</a>
+                </li>
+            </ul>
+            <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- 2. Search & Filter Dashboard Area -->
+    <header class="search-dashboard">
+        <div class="section-container">
+            <h1>Explore Professional Gigs</h1>
+            <p>Find premium vetted experts spanning core technical sectors globally.</p>
+            
+            <!-- Search Bar UI Container -->
+            <div class="search-bar-box">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" placeholder="Search for services (e.g., React, Logo Design, Copywriting)...">
+                <button class="btn-search">Search</button>
+            </div>
+
+            <!-- Category Filtering UI -->
+            <div class="filter-wrapper">
+                <button class="filter-btn active">All Categories</button>
+                <button class="filter-btn"><i class="fa-solid fa-code"></i> Web Development</button>
+                <button class="filter-btn"><i class="fa-solid fa-palette"></i> Graphic Design</button>
+                <button class="filter-btn"><i class="fa-solid fa-pen-nib"></i> Writing</button>
+                <button class="filter-btn"><i class="fa-solid fa-chart-line"></i> Marketing</button>
+                <button class="filter-btn"><i class="fa-solid fa-video"></i> Video Editing</button>
+                <button class="filter-btn"><i class="fa-solid fa-laptop-code"></i> Programming</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 3. Responsive 12-Card Grid Layout Section -->
+    <main class="catalog-section">
+        <div class="section-container">
+            <div class="services-grid">
+                
+                <!-- Card 1 -->
+                <div class="premium-card">
+                    <div class="card-img-holder">💻 Web Dev</div>
+                    <div class="card-body">
+                        <div class="freelancer-meta">By <strong>Alex M.</strong> <span class="level-tag">Level 2</span></div>
+                        <h3>Build Custom Fullstack Next.js Applications</h3>
+                        <p>High-performance rendering web engines custom-crafted to accelerate corporate business scaling metrics.</p>
+                        <div class="card-footer">
+                            <div class="rating"><i class="fa-solid fa-star"></i> 4.9 <span>(142)</span></div>
+                            <div class="price">Starting at <span>Rs. 25,000</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="premium-card">
+                    <div class="card-img-holder">🎨 Design</div>
+                    <div class="card-body">
+                        <div class="freelancer-meta">By <strong>Sarah K.</strong> <span class="level-tag">Pro</span></div>
+                        <h3>Modern Minimalist Brand Logo & Identity</h3>
+                        <p>Complete custom premium vector dynamic branding design schemes complete with layered guide files.</p>
+                        <div class="card-footer">
+                            <div class="rating"><i class="fa-solid fa-star"></i> 5.0 <span>(89)</span></div>
+                            <div class="price">Starting at <span>Rs. 12,000</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="premium-card">
+                    <div class="card-img-holder">✍️ Writing</div>
+                    <div class="card-body">
+                        <div class="freelancer-meta">By <strong>John D.</strong> <span class="level-tag">Top Rated</span></div>
+                        <h3>SEO Optimized Copywriting & Technical Blogs</h3>
+                        <p>Rank authoritative industry articles high on core search engine platforms via target keywords configuration.</p>
+                        <div class="card-footer">
+                            <div class="rating"><i class="fa-solid fa-star"></i> 4.8 <span>(210)</span></div>
+                            <div class="price">Starting at <span>Rs. 5,500</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="premium-card">
+                    <div class="card-img-holder">📈 Marketing</div>
+                    <div class="card-body">
+                        <div class="freelancer-meta">By <strong>Emma W.</strong> <span class="level-tag">Level 1</span></div>
+                        <h3>Targeted Meta & Google Ad Campaign Setup</h3>
+                        <p>Scale business e-commerce stores ROI parameters using optimized target audience conversion blueprints.</p>
+                        <div class="card-footer">
+                            <div class="rating"><i class="fa-solid fa-star"></i> 4.7 <span>(64)</span></div>
+                            <div class="price">Starting at <span>Rs. 18,500</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="premium-card">
+                    <div class="card-img-holder">🎬 Video</div>
+                    <div class="card-body">
+                        <div class="freelancer-meta">By <strong>David L.</strong> <span class="level-tag">Level 2</span></div>
+                        <h3>Cinematic Video Editing & Social Shorts</h3>
+                        <p>Engaging pacing, custom overlays, transitions, audio balancing, and text dynamics for content platforms.</p>
+                        <div class="card-footer">
+                            <div class="rating"><i class="fa-solid fa-star"></i> 4.9 <span>(115)</span></div>
+                            <div class="price">Starting at <span>Rs. 8,000</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="premium-card">
+                    <div class="card-img-holder">⚙️ Programming</div>
+                    <div class="card-body">
+                        <div class="freelancer-meta">By <strong>Zayn A.</strong> <span class="level-tag">Pro</span></div>
+                        <h3>Custom Python Automation Scripts & Scraping</h3>
+                        <p>Automate repetitive administrative or visual parsing loops securely using structured database returns.</p>
+                        <div class="card-footer">
+                            <div class="rating"><i class="fa-solid fa-star"></i> 5.0 <span>(43)</span></div>
+                            <div class="price">Starting at <span>Rs. 15,000</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="premium-card">
+                    <div class="card-img-holder">📱 Web Dev</div>
+                    <div class="card-body">
+                        <div class="freelancer-meta">By <strong>Maria T.</strong> <span class="level-tag">Level 2</span></div>
+                        <h3>Responsive WordPress E-Commerce Deployment</h3>
+                        <p>Complete web retail layouts integrated with global premium secure automated checkouts ecosystems.</p>
+                        <div class="card-footer">
+                            <div class="rating"><i class="fa-solid fa-star"></i> 4.9 <span>(97)</span></div>
+                            <div class="price">Starting at <span>Rs. 22,000</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="premium-card">
+                    <div class="card-img-holder">📐 Design</div>
+                    <div class="card-body">
+                        <div class="freelancer-meta">By <strong>Liam N.</strong> <span class="level-tag">Level 1</span></div>
+                        <h3>Sleek Figma UI/UX Web Dashboard Prototypes</h3>
+                        <p>User-centered research turned into breathtaking wireframes and interactive pixel-perfect templates.</p>
+                        <div class="card-footer">
+                            <div class="rating"><i class="fa-solid fa-star"></i> 4.6 <span>(38)</span></div>
+                            <div class="price">Starting at <span>Rs. 14,000</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 9 -->
+                <div class="premium-card">
+                    <div class="card-img-holder">📝 Writing</div>
+                    <div class="card-body">
+                        <div class="freelancer-meta">By <strong>Clara R.</strong> <span class="level-tag">Level 2</span></div>
+                        <h3>Professional Resume & LinkedIn Profile Writing</h3>
+                        <p>Optimize your corporate career pathways utilizing industry applicant tracking keyword frameworks.</p>
+                        <div class="card-footer">
+                            <div class="rating"><i class="fa-solid fa-star"></i> 5.0 <span>(76)</span></div>
+                            <div class="price">Starting at <span>Rs. 4,500</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 10 -->
+                <div class="premium-card">
+                    <div class="card-img-holder">🎯 Marketing</div>
+                    <div class="card-body">
+                        <div class="freelancer-meta">By <strong>Omar F.</strong> <span class="level-tag">Top Rated</span></div>
+                        <h3>Organic Social Media Growth Management</h3>
+                        <p>Build real communities across major media pipelines with targeted strategic scheduling calendars.</p>
+                        <div class="card-footer">
+                            <div class="rating"><i class="fa-solid fa-star"></i> 4.8 <span>(183)</span></div>
+                            <div class="price">Starting at <span>Rs. 19,000</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 11 -->
+                <div class="premium-card">
+                    <div class="card-img-holder">🎨 Design</div>
+                    <div class="card-body">
+                        <div class="freelancer-meta">By <strong>Sofia V.</strong> <span class="level-tag">Pro</span></div>
+                        <h3>Premium 3D Product Mockups & Rendering</h3>
+                        <p>High-resolution realistic product display materials perfect for dynamic marketing presentation grids.</p>
+                        <div class="card-footer">
+                            <div class="rating"><i class="fa-solid fa-star"></i> 4.9 <span>(52)</span></div>
+                            <div class="price">Starting at <span>Rs. 16,500</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 12 -->
+                <div class="premium-card">
+                    <div class="card-img-holder">🚀 Programming</div>
+                    <div class="card-body">
+                        <div class="freelancer-meta">By <strong>Ryan G.</strong> <span class="level-tag">Level 2</span></div>
+                        <h3>Secure API Development & Database Setup</h3>
+                        <p>Fast SQL/NoSQL structures connecting client layers safely to background logic pipelines.</p>
+                        <div class="card-footer">
+                            <div class="rating"><i class="fa-solid fa-star"></i> 4.9 <span>(31)</span></div>
+                            <div class="price">Starting at <span>Rs. 30,000</span></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- 4. Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <hr class="footer-divider" style="margin-top: 0;">
+            <p class="copyright">&copy; 2026 LyncIt Marketplace. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
