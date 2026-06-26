@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex M. | Expert Fullstack Developer - LyncIt</title>
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Premium Embedded Stylesheet to match Day 2 -->
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+        body { background: linear-gradient(180deg, #000000 0%, #111827 50%, #1f2937 100%) !important; color: #f8fafc !important; line-height: 1.6; min-height: 100vh; }
+        a { text-decoration: none; transition: all 0.3s ease; }
+        .section-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Navbar */
+        .navbar { background: #000000; border-bottom: 1px solid rgba(255, 255, 255, 0.1); height: 80px; display: flex; align-items: center; position: sticky; top: 0; z-index: 1000; }
+        .nav-container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.6rem; font-weight: 800; color: #ffffff; }
+        .logo span { background: linear-gradient(90deg, #ffffff, #94a3b8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .nav-links { display: flex; align-items: center; gap: 30px; list-style: none; }
+        .nav-links a { color: #cbd5e1; font-weight: 500; font-size: 0.95rem; }
+        .nav-links a:hover, .nav-links a.active { color: #ffffff; }
+        
+        /* Profile Layout Grid */
+        .profile-wrapper { padding: 50px 0 100px; display: grid; grid-template-columns: 350px 1fr; gap: 40px; }
+        
+        /* Left Column: Sidebar Card */
+        .profile-sidebar { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 20px; padding: 40px 30px; text-align: center; height: fit-content; }
+        .avatar-placeholder { width: 130px; height: 130px; border-radius: 50%; background: linear-gradient(135deg, #ffffff 0%, #475569 100%); margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: #000000; font-weight: 700; box-shadow: 0 0 20px rgba(255,255,255,0.1); }
+        .profile-sidebar h2 { font-size: 1.6rem; font-weight: 700; color: #ffffff; margin-bottom: 5px; }
+        .profile-title { color: #94a3b8; font-size: 0.95rem; font-weight: 500; margin-bottom: 20px; }
+        .stats-box { display: flex; justify-content: space-around; border-top: 1px solid rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.06); padding: 15px 0; margin-bottom: 25px; }
+        .stat-item text { display: block; font-size: 1.2rem; font-weight: 700; color: #ffffff; }
+        .stat-item span { font-size: 0.8rem; color: #64748b; }
+        .btn-contact { display: block; width: 100%; background: #ffffff; color: #000000; text-align: center; padding: 14px 0; border-radius: 10px; font-weight: 600; cursor: pointer; border: none; }
+        .btn-contact:hover { background: #cbd5e1; }
+        
+        /* Right Column: Main Showcase Content */
+        .profile-main-content { display: flex; flex-direction: column; gap: 40px; }
+        .content-card { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 20px; padding: 35px; }
+        .content-card h3 { font-size: 1.4rem; font-weight: 700; color: #ffffff; margin-bottom: 15px; border-left: 4px solid #ffffff; padding-left: 12px; }
+        .content-card p { color: #cbd5e1; font-size: 1rem; }
+        
+        /* Skills List Tags */
+        .skills-grid { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 5px; }
+        .skill-tag { background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.1); color: #ffffff; padding: 8px 18px; border-radius: 30px; font-size: 0.88rem; font-weight: 500; }
+        
+        /* Experience List */
+        .timeline { list-style: none; padding-top: 10px; }
+        .timeline-item { position: relative; padding-left: 30px; margin-bottom: 25px; }
+        .timeline-item::before { content: ''; position: absolute; left: 0; top: 6px; width: 10px; height: 10px; border-radius: 50%; background: #ffffff; }
+        .timeline-item h4 { font-size: 1.1rem; color: #ffffff; font-weight: 600; }
+        .timeline-item span { font-size: 0.85rem; color: #64748b; display: block; margin-bottom: 5px; }
+        
+        /* Portfolio Grid Section */
+        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-top: 10px; }
+        .portfolio-item { height: 160px; background: linear-gradient(135deg, #1e293b 0%, #000000 100%); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-weight: 600; color: #94a3b8; cursor: pointer; transition: 0.3s ease; }
+        .portfolio-item:hover { transform: translateY(-4px); border-color: #ffffff; color: #ffffff; }
+
+        /* Footer */
+        .main-footer { padding: 40px 0; border-top: 1px solid rgba(255, 255, 255, 0.1); text-align: center; font-size: 0.85rem; color: #cbd5e1; }
+        
+        @media (max-width: 900px) { .profile-wrapper { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Lync<span>It</span>.</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Browse Services</a></li>
+                <li><a href="profile.html" class="active">Seller Profile</a></li>
+                <li><a href="details.html">Service Details</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Section Box -->
+    <main class="section-container">
+        <div class="profile-wrapper">
+            
+            <!-- Left Side Element -->
+            <aside class="profile-sidebar">
+                <div class="avatar-placeholder">AM</div>
+                <h2>Alex M.</h2>
+                <p class="profile-title">Senior Fullstack Software Engineer</p>
+                
+                <div class="stats-box">
+                    <div class="stat-item"><text>5.0</text><span>Rating</span></div>
+                    <div class="stat-item"><text>140+</text><span>Gigs Done</span></div>
+                    <div class="stat-item"><text>100%</text><span>On Time</span></div>
+                </div>
+
+                <button class="btn-contact" onclick="alert('Message feature coming in Day 4!')">Contact Seller</button>
+            </aside>
+
+            <!-- Right Content Panel -->
+            <section class="profile-main-content">
+                
+                <div class="content-card">
+                    <h3>Professional Biography</h3>
+                    <p>Dynamic software architect specializing in structural optimization frameworks, API microservices integration, and responsive state engine deployments. Over 6+ years delivering premium enterprise web solutions for client ecosystems globally.</p>
+                </div>
+
+                <div class="content-card">
+                    <h3>Core Specialized Skills</h3>
+                    <div class="skills-grid">
+                        <div class="skill-tag">Next.js / React</div>
+                        <div class="skill-tag">Node.js Ecosystem</div>
+                        <div class="skill-tag">TypeScript Logic</div>
+                        <div class="skill-tag">Tailwind Engine</div>
+                        <div class="skill-tag">RESTful System APIs</div>
+                        <div class="skill-tag">PostgreSQL / MongoDB</div>
+                    </div>
+                </div>
+
+                <div class="content-card">
+                    <h3>Employment & Experience History</h3>
+                    <ul class="timeline">
+                        <li class="timeline-item">
+                            <h4>Lead Elite Freelance Architect</h4>
+                            <span>LyncIt Platform • 2024 - Present</span>
+                            <p>Architecting production ready dashboard models utilizing optimal microservices orchestration protocols.</p>
+                        </li>
+                        <li class="timeline-item">
+                            <h4>Senior Web Developer</h4>
+                            <span>Nexus Tech Solutions • 2021 - 2024</span>
+                            <p>Directed scalable pipeline engineering adjustments reducing interface loading parameters across legacy sites.</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="content-card">
+                    <h3>Project Portfolio Case Studies</h3>
+                    <div class="portfolio-grid">
+                        <div class="portfolio-item">📊 FinTech Portal Dashboard</div>
+                        <div class="portfolio-item">🛒 Crypto E-Retail System</div>
+                        <div class="portfolio-item">⚡ Real-Time SaaS Console</div>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2026 LyncIt Marketplace. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

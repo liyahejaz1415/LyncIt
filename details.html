@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build Custom Fullstack Next.js Applications - Details</title>
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Premium Embedded Stylesheet -->
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+        body { background: linear-gradient(180deg, #000000 0%, #111827 50%, #1f2937 100%) !important; color: #f8fafc !important; line-height: 1.6; min-height: 100vh; }
+        a { text-decoration: none; transition: all 0.3s ease; }
+        .section-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Navbar */
+        .navbar { background: #000000; border-bottom: 1px solid rgba(255, 255, 255, 0.1); height: 80px; display: flex; align-items: center; position: sticky; top: 0; z-index: 1000; }
+        .nav-container { width: 100%; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.6rem; font-weight: 800; color: #ffffff; }
+        .logo span { background: linear-gradient(90deg, #ffffff, #94a3b8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .nav-links { display: flex; align-items: center; gap: 30px; list-style: none; }
+        .nav-links a { color: #cbd5e1; font-weight: 500; font-size: 0.95rem; }
+        .nav-links a:hover, .nav-links a.active { color: #ffffff; }
+
+        /* Two-Column Details Layout Grid */
+        .details-layout { padding: 50px 0 100px; display: grid; grid-template-columns: 1fr 400px; gap: 40px; }
+        
+        /* Left Panel - Main Presentation Details */
+        .details-content { display: flex; flex-direction: column; gap: 35px; }
+        .service-banner { height: 350px; background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #000000 100%); border: 1px solid rgba(255,255,255,0.08); border-radius: 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 20px; }
+        .service-banner h1 { font-size: 2.2rem; font-weight: 800; color: #ffffff; margin-bottom: 10px; max-width: 750px; }
+        .service-meta-badge { font-size: 0.9rem; color: #94a3b8; }
+        .service-meta-badge a { color: #ffffff; font-weight: 600; text-decoration: underline; }
+        
+        .section-block h2 { font-size: 1.4rem; font-weight: 700; color: #ffffff; margin-bottom: 15px; border-left: 4px solid #ffffff; padding-left: 12px; }
+        .section-block p { color: #cbd5e1; font-size: 1.05rem; margin-bottom: 15px; }
+        
+        /* Feature Grid Checkmarks */
+        .feature-list { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px; margin-top: 10px; }
+        .feature-list li { color: #cbd5e1; display: flex; align-items: center; gap: 10px; font-size: 0.95rem; }
+        .feature-list i { color: #ffffff; font-size: 1rem; }
+
+        /* Review Layout Area */
+        .reviews-container { display: flex; flex-direction: column; gap: 20px; margin-top: 10px; }
+        .review-card { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); padding: 25px; border-radius: 16px; }
+        .review-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+        .reviewer-info strong { color: #ffffff; font-size: 1rem; display: block; }
+        .reviewer-info span { color: #64748b; font-size: 0.8rem; }
+        .stars { color: #f59e0b; font-size: 0.85rem; }
+        .review-card p { color: #cbd5e1; font-size: 0.95rem; line-height: 1.5; }
+
+        /* Right Panel - Sticky Purchase Utility Box */
+        .pricing-sidebar { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 20px; padding: 35px; height: fit-content; position: sticky; top: 120px; }
+        .price-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; }
+        .price-header h3 { font-size: 1.1rem; color: #94a3b8; font-weight: 500; }
+        .price-amount { font-size: 1.8rem; font-weight: 800; color: #ffffff; }
+        .spec-row { display: flex; justify-content: space-between; align-items: center; color: #cbd5e1; font-size: 0.9rem; margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .spec-row i { margin-right: 6px; color: #94a3b8; }
+        .btn-order { display: block; width: 100%; background: #ffffff; color: #000000; text-align: center; padding: 15px 0; border-radius: 10px; font-weight: 700; font-size: 1rem; margin-top: 25px; border: none; cursor: pointer; transition: 0.3s ease; }
+        .btn-order:hover { background: #cbd5e1; transform: translateY(-2px); }
+
+        /* Footer */
+        .main-footer { padding: 40px 0; border-top: 1px solid rgba(255, 255, 255, 0.1); text-align: center; font-size: 0.85rem; color: #cbd5e1; }
+
+        @media (max-width: 950px) { .details-layout { grid-template-columns: 1fr; } .pricing-sidebar { position: static; } }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Lync<span>It</span>.</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Browse Services</a></li>
+                <li><a href="profile.html">Seller Profile</a></li>
+                <li><a href="details.html" class="active">Service Details</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content Area Layout -->
+    <main class="section-container">
+        <div class="details-layout">
+            
+            <!-- Left Side Main Dynamic Content View -->
+            <section class="details-content">
+                
+                <!-- Service Premium Full-Bleed Graphic Panel -->
+                <div class="service-banner">
+                    <h1>Build Custom Fullstack Next.js Applications</h1>
+                    <div class="service-meta-badge">
+                        Category: Web Development | Provided By <a href="profile.html">Alex M.</a>
+                    </div>
+                </div>
+
+                <div class="section-block">
+                    <h2>Detailed Gig Description</h2>
+                    <p>Are you looking to scale your core company metrics with a high-performance web architecture? Look no further. I specialize in delivering production-ready, search engine authoritative fullstack ecosystems utilizing Next.js, React, and robust database architectures.</p>
+                    <p>Every single deployment is engineered from the ground up to ensure fluid screen responsiveness, enterprise-grade state data handling, and optimized asset delivery for lightning-fast speeds.</p>
+                </div>
+
+                <div class="section-block">
+                    <h2>Included Core Service Features</h2>
+                    <ul class="feature-list">
+                        <li><i class="fa-solid fa-circle-check"></i> Pixel-Perfect Figma Translation</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Advanced Server-Side API Routes</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Secure JWT/OAuth User Sessions</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Fully Responsive Structural Grids</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Database Modeling & Linking</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Comprehensive Deployment Support</li>
+                    </ul>
+                </div>
+
+                <!-- Reviews and Testimonials Container Section -->
+                <div class="section-block">
+                    <h2>Client Reviews & Feedback (3)</h2>
+                    <div class="reviews-container">
+                        
+                        <!-- Review Card item 1 -->
+                        <div class="review-card">
+                            <div class="review-header">
+                                <div class="reviewer-info">
+                                    <strong>Sarah Jennings</strong>
+                                    <span>United States • June 2026</span>
+                                </div>
+                                <div class="stars"><i class="fa-solid fa-star"></i> 5.0</div>
+                            </div>
+                            <p>"Absolutely phenomenal execution. The dashboard load times are blazing fast and the source code structure is pristine. Will explicitly hire Alex again!"</p>
+                        </div>
+
+                        <!-- Review Card item 2 -->
+                        <div class="review-card">
+                            <div class="review-header">
+                                <div class="reviewer-info">
+                                    <strong>David Vance</strong>
+                                    <span>United Kingdom • May 2026</span>
+                                </div>
+                                <div class="stars"><i class="fa-solid fa-star"></i> 5.0</div>
+                            </div>
+                            <p>"The responsiveness across target mobile frameworks works flawlessly. Great communication throughout the pipeline initialization loop."</p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Right Side Interactive Pricing Sidebar Box -->
+            <aside class="pricing-sidebar">
+                <div class="price-header">
+                    <h3>Premium Package</h3>
+                    <div class="price-amount">Rs. 25,000</div>
+                </div>
+                
+                <div class="spec-row">
+                    <span><i class="fa-regular fa-clock"></i> Delivery Time Target</span>
+                    <strong>5 Business Days</strong>
+                </div>
+                <div class="spec-row">
+                    <span><i class="fa-solid fa-arrows-rotate"></i> Revisions Allowed</span>
+                    <strong>Unlimited Plan</strong>
+                </div>
+                <div class="spec-row">
+                    <span><i class="fa-solid fa-code-branch"></i> Complete Source Code</span>
+                    <strong>Included</strong>
+                </div>
+
+                <button class="btn-order" onclick="alert('Order pipeline initializes in Day 5!')">Order Service Now</button>
+            </aside>
+
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2026 LyncIt Marketplace. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
