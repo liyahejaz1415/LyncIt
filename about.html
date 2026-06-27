@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | LyncIt Marketplace</title>
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Premium Embedded Stylesheet -->
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+        body { background: linear-gradient(180deg, #000000 0%, #111827 50%, #1f2937 100%) !important; color: #f8fafc !important; line-height: 1.6; min-height: 100vh; }
+        a { text-decoration: none; transition: all 0.3s ease; }
+        .section-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Navbar */
+        .navbar { background: #000000; border-bottom: 1px solid rgba(255, 255, 255, 0.1); height: 80px; display: flex; align-items: center; position: sticky; top: 0; z-index: 1000; }
+        .nav-container { width: 100%; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.6rem; font-weight: 800; color: #ffffff; }
+        .logo span { background: linear-gradient(90deg, #ffffff, #94a3b8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .nav-links { display: flex; align-items: center; gap: 25px; list-style: none; }
+        .nav-links a { color: #cbd5e1; font-weight: 500; font-size: 0.95rem; }
+        .nav-links a:hover, .nav-links a.active { color: #ffffff; }
+        .nav-buttons { display: flex; align-items: center; gap: 15px; margin-left: 15px; }
+        .btn-login { color: #ffffff !important; }
+        .btn-signup { padding: 10px 20px; background: #ffffff; color: #000000 !important; border-radius: 8px; font-weight: 600; }
+
+        /* Hero Header */
+        .about-hero { text-align: center; padding: 70px 0 40px; }
+        .about-hero h1 { font-size: 3rem; font-weight: 800; color: #ffffff; margin-bottom: 15px; }
+        .about-hero p { color: #94a3b8; font-size: 1.1rem; max-width: 700px; margin: 0 auto; }
+
+        /* Content Blocks Grid */
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; padding: 30px 0 60px; }
+        .info-card { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 20px; padding: 35px; }
+        .info-card h2 { font-size: 1.4rem; color: #ffffff; margin-bottom: 15px; border-left: 4px solid #ffffff; padding-left: 12px; }
+        .info-card p { color: #cbd5e1; font-size: 0.98rem; }
+
+        /* Team Showcase Grid */
+        .team-section { padding: 40px 0 100px; text-align: center; }
+        .team-section h2 { font-size: 2.2rem; font-weight: 800; margin-bottom: 40px; color: #ffffff; }
+        .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+        .team-card { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 30px 20px; transition: 0.3s ease; }
+        .img-placeholder { width: 110px; height: 110px; border-radius: 50%; background: linear-gradient(135deg, #64748b 0%, #0f172a 100%); margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; font-weight: 700; color: #ffffff; }
+        .team-card h3 { font-size: 1.2rem; color: #ffffff; margin-bottom: 5px; }
+        .team-card p { font-size: 0.9rem; color: #94a3b8; }
+        .team-card:hover { transform: translateY(-5px); border-color: rgba(255, 255, 255, 0.3); }
+
+        /* Footer */
+        .main-footer { padding: 40px 0; border-top: 1px solid rgba(255, 255, 255, 0.1); text-align: center; font-size: 0.85rem; color: #cbd5e1; }
+        @media (max-width: 850px) { .about-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container class=&quot;section-container&quot;">
+            <a href="index.html" class="logo">Lync<span>It</span>.</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Browse Services</a></li>
+                <li><a href="profile.html">Seller Profile</a></li>
+                <li><a href="details.html">Service Details</a></li>
+                <li><a href="about.html" class="active">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="nav-buttons">
+                    <a href="#" class="btn-login">Log In</a>
+                    <a href="#" class="btn-signup">Sign Up</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content Header -->
+    <header class="about-hero">
+        <div class="section-container">
+            <h1>Connecting Global Expertise</h1>
+            <p>LyncIt is a premium specialized freelance marketplace engineered to bridge high-tier technical talent directly with corporate software operations.</p>
+        </div>
+    </header>
+
+    <!-- Info Sections Grid -->
+    <main class="section-container">
+        <div class="about-grid">
+            <div class="info-card">
+                <h2>Our Mission Statement</h2>
+                <p>To empower advanced technical engineers and creative specialists by creating a highly optimized, friction-free business channel that values elite proficiency, clear documentation, and structural integrity above all else.</p>
+            </div>
+            <div class="info-card">
+                <h2>Future Milestones & Vision</h2>
+                <p>We look to establish LyncIt as the leading remote-first hub for secure microservices delivery. By scaling our platform validation tools, we plan to support end-to-end technical project management workflows by the end of 2026.</p>
+            </div>
+        </div>
+
+        <!-- Team Showcase Area -->
+        <section class="team-section">
+            <h2>Meet Our Technical Leadership</h2>
+            <div class="team-grid">
+                
+                <div class="team-card">
+                    <div class="img-placeholder">CEO</div>
+                    <h3>Zayn Malik</h3>
+                    <p>Founder & Platform Director</p>
+                </div>
+
+                <div class="team-card">
+                    <div class="img-placeholder">CTO</div>
+                    <h3>Alex Mercer</h3>
+                    <p>Chief Systems Architect</p>
+                </div>
+
+                <div class="team-card">
+                    <div class="img-placeholder">PM</div>
+                    <h3>Sarah Jenkins</h3>
+                    <p>Head of Project Management</p>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2026 LyncIt Marketplace. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
