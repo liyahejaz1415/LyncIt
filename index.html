@@ -10,19 +10,145 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="css/style.css">
-</head>
+    
+    <style>
+        /* Global Reset & Theme Base */
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+        }
+        body { 
+            background: #000000 !important; 
+            color: #f8fafc !important; 
+            line-height: 1.6; 
+        }
+        a { text-decoration: none; }
+
+        /* Premium Header Navigation Layout */
+        .navbar { 
+            background: #000000 !important; 
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important; 
+            height: 80px !important; 
+            display: flex !important; 
+            align-items: center !important; 
+            position: sticky !important; 
+            top: 0 !important; 
+            z-index: 1000 !important; 
+        }
+        .nav-container { 
+            width: 100% !important; 
+            max-width: 1200px !important; 
+            margin: 0 auto !important; 
+            padding: 0 20px !important; 
+            display: flex !important; 
+            justify-content: space-between !important; 
+            align-items: center !important; 
+        }
+        .logo { font-size: 1.6rem !important; font-weight: 800 !important; color: #ffffff !important; }
+        .logo span { color: #94a3b8 !important; }
+        
+        /* Desktop Navigation Items Alignment */
+        .nav-links { display: flex !important; align-items: center !important; gap: 25px !important; list-style: none !important; }
+        .nav-links a { 
+            color: #cbd5e1 !important; 
+            font-weight: 500 !important; 
+            font-size: 0.95rem !important; 
+            background: none !important;
+            border: none !important;
+            padding: 0 !important;
+            box-shadow: none !important;
+        }
+        .nav-links a:hover, .nav-links a.active { color: #ffffff !important; }
+        
+        .nav-buttons { display: flex !important; align-items: center !important; gap: 15px !important; }
+        .btn-login { color: #ffffff !important; }
+        .btn-signup { padding: 10px 20px !important; background: #ffffff !important; color: #000000 !important; border-radius: 8px !important; font-weight: 600 !important; }
+
+        /* Hero Link Buttons - Direct Specific Targets */
+        .hero-btn-primary {
+            display: inline-block !important;
+            margin: 20px 0 20px 20px !important;
+            padding: 12px 28px !important;
+            background: #ffffff !important;
+            color: #000000 !important;
+            border-radius: 8px !important;
+            font-weight: 700 !important;
+            font-size: 0.95rem !important;
+            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1) !important;
+        }
+        .hero-btn-secondary {
+            display: inline-block !important;
+            margin-left: 15px !important;
+            padding: 12px 24px !important;
+            background: rgba(255, 255, 255, 0.08) !important;
+            color: #ffffff !important;
+            border: 1px solid rgba(255, 255, 255, 0.15) !important;
+            border-radius: 8px !important;
+            font-weight: 600 !important;
+            font-size: 0.95rem !important;
+        }
+
+        /* Main Content Headings & Paragraph Layout */
+        h1, h2 {
+            max-width: 1200px;
+            margin: 40px auto 15px auto;
+            padding: 0 20px;
+            font-weight: 800;
+        }
+        h1 { font-size: 2.5rem; margin-top: 60px; }
+        h2 { font-size: 1.8rem; margin-top: 50px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px; }
+        p { max-width: 1200px; margin: 0 auto 25px auto; padding: 0 20px; color: #94a3b8; font-size: 1.05rem; }
+
+        /* Service Cards Grid Container Style */
+        h3 {
+            max-width: 1200px;
+            margin: 30px auto 5px auto;
+            padding: 20px 25px;
+            background: #0f172a;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 8px 8px 0 0;
+            font-size: 1.3rem;
+            color: #ffffff;
+        }
+        h3 + p {
+            max-width: 1200px;
+            margin: 0 auto 20px auto;
+            padding: 0 25px 20px 25px;
+            background: #0f172a;
+            border-left: 1px solid rgba(255, 255, 255, 0.05);
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 0 0 8px 8px;
+            color: #94a3b8;
+        }
+    </style>
+<head>   
 <body>
 
-    <ul class="nav-links" id="navLinks">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="services.html">Browse Services</a></li>
-    <li><a href="profile.html">Seller Profile</a></li>
-    <li><a href="details.html">Service Details</a></li>
-    <li><a href="about.html">About Us</a></li>
-    <li><a href="contact.html">Contact</a></li>
-    <li class="nav-buttons">
+    <!-- Unified Interactive Navbar with Hamburger Toggle -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Professional Logo Brand -->
+            <a href="index.html" class="logo">Lync<span>It</span>.</a>
+            
+            <!-- The Hamburger Menu Button for Day 5 Responsive Actions -->
+            <button class="hamburger" id="hamburgerMenu" aria-label="Toggle Menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </button>
+
+            <!-- Your Navigation Links with Home marked active -->
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="services.html">Browse Services</a></li>
+                <li><a href="profile.html">Seller Profile</a></li>
+                <li><a href="details.html">Service Details</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="nav-buttons">
         <a href="#" class="btn-login">Log In</a>
         <a href="#" class="btn-signup">Sign Up</a>
     </li>
@@ -43,8 +169,8 @@
                 <h1>Find the Perfect Freelance Services with <span class="text-gradient">LyncIt</span></h1>
                 <p>Instantly connect with top-tier global talent in web design, development, digital marketing, and more. Get your projects completed safely and seamlessly.</p>
                 <div class="hero-actions">
-                    <a href="#services" class="btn-cta">Explore Services <i class="fa-solid fa-arrow-right"></i></a>
-                    <a href="#" class="btn-secondary">Become a Seller</a>
+                    <a href="services.html" class="hero-btn-primary">Explore Services</a>
+                    <a href="profile.html" class="hero-btn-secondary">Become a Seller</a>
                 </div>
             </div>
             <div class="hero-image-pane">
@@ -139,7 +265,12 @@
         </div>
     </footer>
 
-    <!-- Mobile Menu Handler Script -->
-    <script src="js/main.js"></script>
+    <!-- Fallback Responsive Mobile Menu Script -->
+    <script>
+        document.getElementById('hamburgerMenu').addEventListener('click', function() {
+            document.getElementById('navLinks').classList.toggle('mobile-active');
+            this.classList.toggle('toggle-bars');
+        });
+    </script>
 </body>
 </html>
